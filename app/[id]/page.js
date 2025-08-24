@@ -16,9 +16,12 @@ export default function PropertyDetailPage() {
 
     }, []);
 
-    if(!property)return <p>Loading . . . </p>
-    
+    if (!property) return <p>Loading . . . </p>
+
     return (
-        <PropertyCard property={property}/>
+        <div className="m-2">
+            <PropertyCard property={property} />
+        </div>
+
     )
 }

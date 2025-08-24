@@ -70,12 +70,14 @@ export default function MyPropertiesPage() {
                     properties.map((p) => (
                         <div key={p.id} className="rounded-lg shadow">
                             <PropertyCard property={p} width={400} height={300} />
-                            <button
-                                onClick={() => setDeleteId(p.id)}
-                                className="mt-3 bg-red-600 text-white px-4 py-2 rounded">Delete</button>
-                            <button className="mt-3 bg-orange-600 text-white px-4 py-2 rounded ml-3"
-                                onClick={() => setEditProperty(p)}
-                            >Edit</button>
+                            <div className="p-2">
+                                <button
+                                    onClick={() => setDeleteId(p.id)}
+                                    className="mt-3 bg-red-600 text-white px-4 py-2 rounded">Delete</button>
+                                <button className="mt-3 bg-orange-600 text-white px-4 py-2 rounded ml-3"
+                                    onClick={() => setEditProperty(p)}
+                                >Edit</button>
+                            </div>
                         </div>
                     ))
                 }

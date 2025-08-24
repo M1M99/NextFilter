@@ -1,13 +1,14 @@
 'use client'
 
 import SubmitButton from "@/components/SubmitButton";
+import { AppContext } from "@/context/AppContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation"
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 export default function LoginPage() {
     const router = useRouter();
-
+    const { setIsLoggedIn } = useContext(AppContext)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -21,6 +22,7 @@ export default function LoginPage() {
         })
 
         if (res.ok) {
+            setIsLoggedIn(true)
             router.push('/');
         }
         else {
